@@ -11,7 +11,7 @@
   = @hotel.room_description
 %p
   %b Photo:
-  = cl_image_tag(@hotel.photo)
+  = cl_image_tag(@hotel.photo.thumbnail)
 %p
   %b Price for room:
   = @hotel.price_for_room
@@ -22,3 +22,7 @@
 = link_to 'Edit', edit_hotel_path(@hotel)
 \|
 = link_to 'Back', hotels_path
+
+%p
+
+= render "comments/list_comments", hotel:@hotel

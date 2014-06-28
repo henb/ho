@@ -3,17 +3,34 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    @comment.user = current_user
+
 
     if @comment.save
-      redirect_to @comment, notice: 'Comment was successfully created.'
+      flash[:success] = 'Comment was successfully created.'
     else
-      render #
+      flash[:danger] = 'Comment was not created.'
+    end
+    
+    respond_to do |format| 
+      format.js
+      format.html { redirect_to @comment.hotel }
     end
   end
 
   def destroy
-    @comment.destroy
-    redirect_to comments_url, notice: 'Comment was successfully destroyed.'
+    @comment_copy = @comment
+    if @comment.destroy
+      flash[:success] = 'The comment was successfully deleted.'
+    else
+      flash[:danger] = 'Comment was not deleted.'
+    end
+    
+    respond_to do |format| 
+      format.js
+      format.html { redirect_to @comment_copy.hotel }
+    end
+
   end
 
   private
@@ -23,6 +40,6 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
-      params.require(:comment).permit(:user_id, :description)
+      params.require(:comment).permit(:hotel_id,:description)
     end
 end

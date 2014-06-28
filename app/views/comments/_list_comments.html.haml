@@ -1,0 +1,26 @@
+.container
+  .row
+    .panel.panel-default.widget
+      .panel-heading
+        %span.glyphicon.glyphicon-comment
+        %h3.panel-title
+          Recent Comments
+        %span.label.label-info
+          = hotel.comments.size
+      .panel-body
+        %ul.list-group
+          %li.list-group-item
+            .row
+              .col-xs-2.col-md-1
+                = image_tag "avatar.png", class:"img-circle img-responsive"
+              .col-xs-10.col-md-11
+                %div
+                  = render "comments/form",hotel:hotel
+          .list-items
+            - hotel.comments.each do |comment|
+              - next if comment.id.nil?
+              = render "comments/list_item",comment:comment,hotel:hotel
+
+        %a.btn.btn-primary.btn-sm.btn-block{:href => "#", :role => "button"}
+          %span.glyphicon.glyphicon-refresh
+          More
