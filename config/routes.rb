@@ -2,7 +2,10 @@ HotelAdvisor::Application.routes.draw do
  
   post '/rate' => 'rater#create', :as => 'rate'
   resources :hotels do 
-     resources :comments,only:[:create,:destroy]    
+     resources :comments,only:[:create,:destroy] 
+      # collection do
+      #   get 'top'
+      # end
   end
 
   devise_for :users
@@ -10,7 +13,7 @@ HotelAdvisor::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'hotels#index'
+  root 'hotels#top'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
