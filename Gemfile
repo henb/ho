@@ -35,3 +35,5 @@ gem 'will_paginate'
 gem 'letsrate'
 gem 'cancan'
 gem 'enumerize'
+
+gem 'faker'

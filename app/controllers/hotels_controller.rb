@@ -4,8 +4,13 @@ class HotelsController < ApplicationController
 
   # GET /hotels
   def index
+    @hotels = Hotel.paginate(page: params[:page], per_page: 5)
+  end
+
+  def top
     @hotels = Hotel.joins(:rate_average).order('rating_caches.avg DESC')
                   .paginate(page: params[:page], per_page: 5)
+    render action: 'index'
   end
 
   # GET /hotels/1
