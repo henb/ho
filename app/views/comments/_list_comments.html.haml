@@ -18,7 +18,3 @@
             - hotel.comments.each do |comment|
               - next if comment.id.nil?
               = render "comments/list_item",comment:comment,hotel:hotel
-
-        %a.btn.btn-primary.btn-sm.btn-block{:href => "#", :role => "button"}
-          %span.glyphicon.glyphicon-refresh
-          More

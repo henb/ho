@@ -16,10 +16,15 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment_copy = @comment
-    @comment.destroy
     @flash = {}
-    @flash[:success] = 'The comment was successfully deleted.'
+    if @comment.autor? current_user
+      @comment_copy = @comment
+      @comment.destroy
+      @flash[:success] = 'The comment was successfully deleted.'
+    else
+      @flash[:danger] = 'Comment was not deleted.'
+    end
+
     respond_to { |format| format.js }
   end
 

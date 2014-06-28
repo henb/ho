@@ -1,23 +1,5 @@
-%p#notice= notice
 
-%p
-  %b Title:
-  = @hotel.title
-%p
-  %b Breakfast included:
-  = @hotel.breakfast_included
-%p
-  %b Room description:
-  = @hotel.room_description
-%p
-  %b Photo:
-  = cl_image_tag(@hotel.photo.thumbnail)
-%p
-  %b Price for room:
-  = @hotel.price_for_room
-%p
-  %b Address:
-  = @hotel.address
+= render "hotels/hotel_list_item",hotel:@hotel
 
 = link_to 'Edit', edit_hotel_path(@hotel)
 \|

@@ -12,4 +12,5 @@
       .comment-text
         = comment.description
       .action
-        = link_to '', hotel_comment_path(hotel,comment), :method => :delete,remote:true,class:"btn btn-danger btn-xs glyphicon glyphicon-trash"
+        - if comment.autor? current_user
+          = link_to '', hotel_comment_path(hotel,comment), :method => :delete,remote:true,class:"btn btn-danger btn-xs glyphicon glyphicon-trash"
