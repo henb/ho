@@ -15,4 +15,5 @@
 /log/*.log
 /tmp
 
-Gemfile.lock
+Gemfile.loc
+/public/uploads/*
