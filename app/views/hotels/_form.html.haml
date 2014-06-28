@@ -1,0 +1,15 @@
+= simple_form_for(@hotel, :html => {:multipart => true} ) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :star_rating
+    = f.input :breakfast_included
+    = f.input :room_description
+    = f.input :photo
+    = f.hidden_field(:photo_cache)
+    = f.input :price_for_room
+    = f.input :address
+
+  .form-actions
+    = f.button :submit

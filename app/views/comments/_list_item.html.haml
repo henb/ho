@@ -1,0 +1,16 @@
+%li.list-group-item{id:"list-item#{comment.id}"}
+  .row
+    .col-xs-2.col-md-1
+      = image_tag "avatar.png", class:"img-circle img-responsive"
+    .col-xs-10.col-md-11
+      %div
+        .mic-info
+          By:
+          %a{:href => "#"} 
+            = comment.user.email
+          = comment.created_at
+      .comment-text
+        = comment.description
+      .action
+        - if can? :destroy, comment 
+          = link_to '', hotel_comment_path(hotel,comment), :method => :delete,remote:true,class:"btn btn-danger btn-xs glyphicon glyphicon-trash"

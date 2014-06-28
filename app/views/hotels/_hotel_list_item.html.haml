@@ -1,0 +1,26 @@
+%article.search-result.row
+  .col-xs-12.col-sm-12.col-md-3
+    = link_to hotel_logo_helper(hotel,class:"thumbnail"), hotel
+  .col-xs-12.col-sm-12.col-md-2
+    %ul.meta-search
+      %li
+        %i.glyphicon.glyphicon-cutlery
+        %i.glyphicon{class:"glyphicon-#{help_check_icon(hotel.breakfast_included)}"}
+      - unless hotel.price_for_room.nil?
+        %li
+          %i.glyphicon.glyphicon-usd
+          %span=hotel.price_for_room
+      %li
+        %i.glyphicon.glyphicon-comment
+        %span=hotel.comments.size
+      %li
+        - hotel.star_rating.to_i.times do |i|
+          %i.glyphicon.glyphicon-star
+  .col-xs-12.col-sm-12.col-md-7.excerpet
+    %h3
+      = link_to hotel.title, hotel
+    %p= rating_for hotel, "rate"
+    %p
+      = hotel.room_description
+    %label.label.label-success= hotel.address
+%hr

@@ -13,3 +13,9 @@
  */
 
 @import "bootstrap";
+
+.help-inline{
+  @extend .label;
+  @extend .label-danger;
+}
+

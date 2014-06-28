@@ -1,10 +1,16 @@
 HotelAdvisor::Application.routes.draw do
+ 
+  post '/rate' => 'rater#create', :as => 'rate'
+  resources :hotels do 
+     resources :comments,only:[:create,:destroy]    
+  end
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'hotels#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

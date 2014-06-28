@@ -1,0 +1,10 @@
+= render "hotels/hotel_list_item",hotel:@hotel
+
+- if can? :edit, @hotel
+  = link_to 'Edit', edit_hotel_path(@hotel)
+  \|
+= link_to 'Back', hotels_path
+
+%p
+
+= render "comments/list_comments", hotel:@hotel

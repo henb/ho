@@ -1,0 +1,4 @@
+= simple_form_for([hotel,hotel.comments.build],remote:true) do |f|
+    = f.input :description,class:"form-control", label: false
+    = f.input :hotel_id, :as => :hidden
+    = f.button :submit, value:"Add comment", class:"btn-xs btn-danger"
