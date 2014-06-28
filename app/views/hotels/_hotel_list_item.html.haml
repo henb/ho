@@ -11,6 +11,9 @@
           %i.glyphicon.glyphicon-usd
           %span=hotel.price_for_room
       %li
+        %i.glyphicon.glyphicon-comment
+        %span=hotel.comments.size
+      %li
         - hotel.star_rating.to_i.times do |i|
           %i.glyphicon.glyphicon-star
   .col-xs-12.col-sm-12.col-md-7.excerpet
