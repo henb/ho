@@ -17,7 +17,7 @@
       %td= hotel.title
       %td= hotel.breakfast_included
       %td= hotel.room_description
-      %td= hotel.photo.url
+      %td= cl_image_tag hotel.photo.thumbnail
       %td= hotel.price_for_room
       %td= hotel.address
       %td= link_to 'Show', hotel

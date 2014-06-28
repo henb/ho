@@ -1,4 +1,6 @@
 HotelAdvisor::Application.routes.draw do
+  resources :comments,only:[:create,:destroy]
+
   resources :hotels
 
   devise_for :users
