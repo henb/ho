@@ -5,4 +5,5 @@ class Hotel < ActiveRecord::Base
   validates :price_for_room, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
   mount_uploader :photo, PhotoUploader
+  letsrate_rateable "rate"
 end
