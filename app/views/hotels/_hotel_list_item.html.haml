@@ -1,14 +1,15 @@
 %article.search-result.row
   .col-xs-12.col-sm-12.col-md-3
-    = link_to cl_image_tag(hotel.photo.thumbnail,class:"thumbnail"), hotel
+    = link_to hotel_logo_helper(hotel,class:"thumbnail"), hotel
   .col-xs-12.col-sm-12.col-md-2
     %ul.meta-search
       %li
         %i.glyphicon.glyphicon-cutlery
         %i.glyphicon{class:"glyphicon-#{help_check_icon(hotel.breakfast_included)}"}
-      %li
-        %i.glyphicon.glyphicon-usd
-        %span=hotel.price_for_room
+      - unless hotel.price_for_room.nil?
+        %li
+          %i.glyphicon.glyphicon-usd
+          %span=hotel.price_for_room
       %li
         - hotel.star_rating.to_i.times do |i|
           %i.glyphicon.glyphicon-star
