@@ -14,6 +14,7 @@ gem 'devise'
 gem "haml-rails"
 gem "simple_form"
 gem 'carrierwave'
+gem 'cloudinary'
 
 group :development,:test do
   gem 'sqlite3'
