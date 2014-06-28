@@ -1,6 +1,8 @@
 .container
+  .text-center= will_paginate hotels
   %hgroup.mb20
     %h1 Listing hotels
   %section.col-xs-12.col-sm-6.col-md-12
   - hotels.each do |hotel|
     = render "hotels/hotel_list_item",hotel:hotel
+  .text-center= will_paginate hotels
