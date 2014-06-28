@@ -4,6 +4,6 @@ class Comment < ActiveRecord::Base
 
   validates :description, presence: true
   def autor?(user)
-  	self.user == user
+    self.user == user
   end
 end

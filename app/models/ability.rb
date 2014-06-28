@@ -9,7 +9,11 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.user?
-      can :manage, Comment
+      can [:create,:new], Hotel
+      can :create, Comment
+      can :destroy, Comment do |comment|
+        comment.autor? user
+      end 
     end
 
   end
