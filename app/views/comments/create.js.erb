@@ -1,1 +1,3 @@
 $(".list-items").prepend("<%= j render 'comments/list_item', comment:@comment,hotel:@comment.hotel %>");
+$(".alert").remove()
+$(".container.main").prepend("<%= j render 'layouts/flash', flash:@flash %>")

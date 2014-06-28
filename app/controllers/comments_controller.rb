@@ -5,32 +5,22 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user = current_user
 
-
+    @flash = {}
     if @comment.save
-      flash[:success] = 'Comment was successfully created.'
+      @flash[:success] = 'Comment was successfully created.'
     else
-      flash[:danger] = 'Comment was not created.'
+      @flash[:danger] = 'Comment was not created.'
     end
     
-    respond_to do |format| 
-      format.js
-      format.html { redirect_to @comment.hotel }
-    end
+    respond_to { |format| format.js }
   end
 
   def destroy
     @comment_copy = @comment
-    if @comment.destroy
-      flash[:success] = 'The comment was successfully deleted.'
-    else
-      flash[:danger] = 'Comment was not deleted.'
-    end
-    
-    respond_to do |format| 
-      format.js
-      format.html { redirect_to @comment_copy.hotel }
-    end
-
+    @comment.destroy
+    @flash = {}
+    @flash[:success] = 'The comment was successfully deleted.'
+    respond_to { |format| format.js }
   end
 
   private

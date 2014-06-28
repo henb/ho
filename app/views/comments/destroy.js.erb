@@ -1,1 +1,3 @@
 $("#list-item<%= @comment_copy.id %>").remove();
+$(".alert").remove()
+$(".container.main").prepend("<%= j render 'layouts/flash', flash:@flash %>")
