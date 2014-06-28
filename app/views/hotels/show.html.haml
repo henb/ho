@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @hotel.title
+%p
+  %b Breakfast included:
+  = @hotel.breakfast_included
+%p
+  %b Room description:
+  = @hotel.room_description
+%p
+  %b Photo:
+  = @hotel.photo
+%p
+  %b Price for room:
+  = @hotel.price_for_room
+%p
+  %b Address:
+  = @hotel.address
+
+= link_to 'Edit', edit_hotel_path(@hotel)
+\|
+= link_to 'Back', hotels_path
