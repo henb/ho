@@ -4,9 +4,11 @@ This a prototype of the application, where
 users can add a hotels which they have visited and put а rating for them.
 
 Lets start with this simple workflow
+
 1. As a user I can register/sign in.
 2. As a user I can see a list of hotels.
-3. As a user I can add a hotel. Hotel has next attributes:
+3. As a user I can add a hotel.
+Hotel has next attributes:
   1. title(required)
   2. star rating(required)
   3. breakfast included?(yes/no)
