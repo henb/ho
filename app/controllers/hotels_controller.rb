@@ -4,7 +4,7 @@ class HotelsController < ApplicationController
 
   # GET /hotels
   def index
-    @hotels = Hotel.paginate(page: params[:page], per_page: 5)
+    @hotels = Hotel.order('star_rating DESC').paginate(page: params[:page], per_page: 5)
   end
 
   def top

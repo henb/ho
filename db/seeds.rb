@@ -20,7 +20,7 @@ admin.save
             breakfast_included: rand(2).zero? ,
             room_description: Faker::Lorem.paragraph,
             address: adress,
-            star_rating:0,
+            star_rating:rand(8),
             price_for_room: rand(1000))
       hotel.save
     end
