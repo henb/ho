@@ -30,7 +30,7 @@ bundle install
 ##### Cloudinary (Rails & CarrierWave integration)
 
 1. Register on http://cloudinary.com/
-2. Download cloudinary.yml
+2. Download ***cloudinary.yml***
 3. Move in *hotel-advisor/config*
 
 ###### Good Luck!
