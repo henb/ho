@@ -1,12 +1,13 @@
-# # Read about factories at https://github.com/thoughtbot/factory_girl
+require "faker"
 
-# FactoryGirl.define do
-#   factory :hotel do
-#     title "MyString"
-#     breakfast_included false
-#     room_description "MyText"
-#     photo "MyString"
-#     price_for_room 1
-#     address "MyString"
-#   end
-# end
+FactoryGirl.define do
+
+  factory :hotel do
+    title       Faker::Name.title
+    breakfast_included true 
+    room_description Faker::Lorem.paragraph
+    star_rating 3
+    price_for_room 100
+ 
+  end
+end
