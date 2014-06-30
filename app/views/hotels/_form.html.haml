@@ -9,7 +9,11 @@
     = f.input :photo
     = f.hidden_field(:photo_cache)
     = f.input :price_for_room
-    = f.input :address
+    = f.fields_for :address do |addresses_form|
+      = addresses_form.input :countr
+      = addresses_form.input :state
+      = addresses_form.input :city
+      = addresses_form.input :street
 
   .form-actions
     = f.button :submit
