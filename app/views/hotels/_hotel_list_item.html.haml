@@ -22,5 +22,5 @@
     %p= rating_for hotel, "rate"
     %p
       = hotel.room_description
-    %label.label.label-success= hotel.address
+    %label.label.label-success= join_value_for(hotel)
 %hr

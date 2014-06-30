@@ -20,6 +20,7 @@ class HotelsController < ApplicationController
   # GET /hotels/new
   def new
     @hotel = Hotel.new
+    @hotel.build_address
   end
 
   # GET /hotels/1/edit
@@ -60,6 +61,12 @@ class HotelsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def hotel_params
-      params.require(:hotel).permit(:title,:star_rating, :breakfast_included, :room_description, :photo, :price_for_room, :address)
+      params.require(:hotel).permit(:title,:star_rating,
+       :breakfast_included,
+       :room_description,
+       :photo,
+       :price_for_room,
+       address_attributes:[:countr,:state,:city,:street])
+
     end
 end

@@ -1,3 +1,5 @@
+Hotel.delete_all
+
 admin = User.new(
     email:      "admin@gmail.com",
     password:              "11111111",
@@ -14,15 +16,22 @@ admin.save
 
   if user.save  
     3.times do
-      adress = "#{Faker::Address.city}, #{Faker::Address.street_address}, #{Faker::Address.secondary_address}"
       hotel = Hotel.new(
             title:       Faker::Name.title,
             breakfast_included: rand(2).zero? ,
             room_description: Faker::Lorem.paragraph,
-            address: adress,
             star_rating:rand(8),
             price_for_room: rand(1000))
       hotel.save
+
+      address = Address.new(
+      	    countr:Faker::Address.city,
+      	    state:Faker::Address.city,
+      	    city: Faker::Address.city,
+      	    street:Faker::Address.street_address,
+      	    hotel:hotel)
+      address.save
+
     end
     
     hotels = Hotel.all
