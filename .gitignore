@@ -17,4 +17,4 @@
 
 Gemfile.loc
 /public/uploads/*
-cloudinary.yml
+/config/*.yml
