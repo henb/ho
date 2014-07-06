@@ -7,7 +7,7 @@ describe "devise_for" do
       it "routes to #new" do
         get("/users/sign_in").should be_routable
       end
-  
+
       it "routes to #create" do
         post("/users/sign_in").should be_routable
       end
@@ -18,7 +18,7 @@ describe "devise_for" do
     end
 
     describe "passwords" do
-      
+
     end
 
     describe "registrations" do
