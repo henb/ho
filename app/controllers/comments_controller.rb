@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     else
       @flash[:danger] = 'Comment was not created.'
     end
-    
+
     respond_to { |format| format.js }
   end
 
@@ -22,17 +22,16 @@ class CommentsController < ApplicationController
     @comment.destroy
     @flash[:success] = 'The comment was successfully deleted.'
 
-
     respond_to { |format| format.js }
   end
 
   private
 
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
 
-    def comment_params
-      params.require(:comment).permit(:hotel_id,:description)
-    end
+  def comment_params
+    params.require(:comment).permit(:hotel_id, :description)
+  end
 end

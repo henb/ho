@@ -54,19 +54,18 @@ class HotelsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_hotel
-      @hotel = Hotel.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_hotel
+    @hotel = Hotel.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def hotel_params
-      params.require(:hotel).permit(:title,:star_rating,
-       :breakfast_included,
-       :room_description,
-       :photo,
-       :price_for_room,
-       address_attributes:[:countr,:state,:city,:street])
-
-    end
+  # Only allow a trusted parameter "white list" through.
+  def hotel_params
+    params.require(:hotel).permit(:title, :star_rating,
+                                  :breakfast_included,
+                                  :room_description,
+                                  :photo,
+                                  :price_for_room,
+                                  address_attributes: [:countr, :state, :city, :street])
+  end
 end
