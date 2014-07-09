@@ -8,5 +8,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   letsrate_rater
 
-  enumerize :role, in: [:guest,:user, :admin], default: :guest, predicates: true
+  enumerize :role, in: [:guest, :user, :admin], default: :guest, predicates: true
 end
