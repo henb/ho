@@ -23,14 +23,14 @@ Getting started
 -----------
 ##### Clone repository
 ```sh
-git clone https://github.com/henb/hotel-advisor.git
-cd hotel-advisor
+git clone https://github.com/henb/ho.git
+cd ho
 bundle install
 ```
 ##### Cloudinary (Rails & CarrierWave integration)
 
 1. Register on http://cloudinary.com/
 2. Download ***cloudinary.yml***
-3. Move in ***hotel-advisor/config***
+3. Move in ***ho/config***
 
 ###### Good Luck!

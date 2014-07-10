@@ -1,25 +1,27 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
 gem 'bootstrap-sass', '~> 3.2.0'
-gem 'sass-rails', '>= 3.2'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-
-gem 'devise'
-gem "haml-rails"
-gem "simple_form"
+gem 'cancan'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'devise'
+gem 'enumerize'
+gem 'faker'
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'letsrate'
+gem 'sass-rails', '>= 3.2'
+gem 'simple_form'
+gem 'turbolinks'
+gem 'uglifier', '>= 1.3.0'
+gem 'will_paginate'
 
 group :development,:test do
   gem 'sqlite3'
 end
-
 
 group :production do
   gem 'pg'
@@ -30,10 +32,3 @@ group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
 end
-
-gem 'will_paginate'
-gem 'letsrate'
-gem 'cancan'
-gem 'enumerize'
-
-gem 'faker'
